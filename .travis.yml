@@ -4,7 +4,14 @@ bundler_args: "--binstubs --standalone --without documentation --path ../bundle"
 script: "bundle exec rake test"
 rvm:
   - 2.0.0
-  - 2.1.5
-  - 2.2.0
+  - 2.1.6
+  - 2.2.2
+  - ruby-head
+  - rbx-2
+  - jruby-head
+matrix:
+  allow_failures:
+    - rvm: jruby-head
+    - rvm: ruby-head
 notifications:
   email: false
